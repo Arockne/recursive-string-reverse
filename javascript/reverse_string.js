@@ -1,5 +1,19 @@
+
+//i
+  //string
+//o
+  //reversed string
+//e
+  //empty string
+//c
+  //none
 function reverseString(str) {
-  // type your code here
+  if (str.length === 0) {
+    return str
+  }
+  const firstChar = str[0]
+  const reversedString = reverseString(str.slice(1))
+  return reversedString + firstChar
 }
 
 if (require.main === module) {
@@ -11,6 +25,21 @@ if (require.main === module) {
 
   console.log("Expecting: 'ybabtac'");
   console.log("=>", reverseString('catbaby'));
+
+  console.log("");
+
+  console.log("Expecting: 'esrever'");
+  console.log("=>", reverseString('reverse'));
+
+  console.log("");
+
+  console.log("Expecting: 'oloy'");
+  console.log("=>", reverseString('yolo'));
+
+  console.log("");
+
+  console.log("Expecting: 'gnirts'");
+  console.log("=>", reverseString('string'));
 }
 
 module.exports = reverseString;
